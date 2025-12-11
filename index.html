@@ -1,484 +1,823 @@
 <!doctype html>
 <html lang="en">
- <head>
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kadir - Creative Designer Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <title>Kadir – Graphic & Visual Creative Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    :root {
+      --sand: #e8dfd0;
+      --clay: #c1b4a2;
+      --bark: #5a4d45;
+      --charcoal: #2b2521;
+      --ink: #14100e;
+      --muted: #d7cbb9;
+      --light: #f9f4eb;
+      --radius: 18px;
+      --shadow: 0 18px 50px rgba(0, 0, 0, 0.25);
+    }
 
-        body {
-            box-sizing: border-box;
-            font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.4;
-            overflow-x: hidden;
-        }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        html, body {
-            height: 100%;
-            width: 100%;
-        }
+    body {
+      font-family: 'Manrope', 'Segoe UI', system-ui, sans-serif;
+      background: radial-gradient(circle at 20% 30%, rgba(200, 182, 160, 0.35), transparent 32%),
+                  radial-gradient(circle at 80% 20%, rgba(124, 104, 88, 0.28), transparent 36%),
+                  linear-gradient(180deg, #f6efe3 0%, #e5d8c5 40%, #c9b9a4 70%, #3d3430 100%);
+      color: var(--ink);
+      min-height: 100vh;
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
 
-        .portfolio-wrapper {
-            width: 100%;
-            min-height: 100%;
-        }
+    .page {
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 26px 22px 80px;
+      position: relative;
+    }
 
-        /* Header Section - Medium Bright */
-        .header-zone {
-            background-color: #E8DFD0;
-            padding: 50px 20px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
+    header {
+      position: sticky;
+      top: 14px;
+      z-index: 10;
+      background: rgba(249, 244, 235, 0.85);
+      border: 1px solid rgba(20, 16, 14, 0.08);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      box-shadow: var(--shadow);
+    }
 
-        .header-zone h1 {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: #1a1a1a;
-            letter-spacing: -0.02em;
-            margin-bottom: 5px;
-        }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
 
-        .header-zone h2 {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 1.5rem;
-            font-weight: 500;
-            color: #4a4a4a;
-            margin-bottom: 15px;
-            max-width: 800px;
-        }
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #fff8ee, #e8dfd0);
+      border: 1px solid rgba(20, 16, 14, 0.12);
+      display: grid;
+      place-items: center;
+      font-family: 'DM Mono', monospace;
+      color: var(--ink);
+    }
 
-        .header-intro-box {
-            background-color: rgba(255, 255, 255, 0.5);
-            border: 2px solid #A89B8C;
-            border-radius: 12px;
-            padding: 25px 30px;
-            max-width: 750px;
-            margin: 20px auto 0;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-        }
+    nav {
+      display: flex;
+      gap: 14px;
+      font-weight: 600;
+      font-size: 14px;
+    }
 
-        .header-zone p {
-            font-size: 1.1rem;
-            color: #3a3a3a;
-            margin: 0 auto 8px;
-            line-height: 1.5;
-        }
+    nav a {
+      color: var(--bark);
+      text-decoration: none;
+      padding: 8px 10px;
+      border-radius: 10px;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
 
-        .header-zone p:last-child {
-            margin-bottom: 0;
-        }
+    nav a:hover {
+      background: rgba(90, 77, 69, 0.12);
+      color: var(--ink);
+    }
 
-        /* Skills Section - Medium Dark */
-        .experience-zone {
-            background-color: #A89B8C;
-            padding: 50px 20px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-        }
+    .ghost {
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(20, 16, 14, 0.12);
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 0.15s ease, box-shadow 0.2s ease;
+    }
 
-        .experience-zone h2 {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 2.5rem;
-            font-weight: 600;
-            color: #ffffff;
-            margin-bottom: 10px;
-        }
+    .ghost:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
 
-        .experience-zone h4 {
-            font-size: 1.1rem;
-            font-weight: 400;
-            color: #f5f5f5;
-            max-width: 900px;
-            line-height: 1.6;
-            text-align: left;
-            white-space: pre-line;
-        }
+    main { display: grid; gap: 46px; margin-top: 22px; }
 
-        hr {
-            display: none;
-        }
+    .hero {
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(20, 16, 14, 0.08);
+      border-radius: 26px;
+      padding: 32px;
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 28px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
 
-        /* Projects Section - Dark */
-        .projects-zone {
-            background-color: #3d3632;
-            padding: 50px 20px;
-            min-height: 50%;
-        }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 80% 20%, rgba(90, 77, 69, 0.12), transparent 40%);
+      pointer-events: none;
+    }
 
-        .projects-zone h2 {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 2.5rem;
-            font-weight: 600;
-            color: #E8DFD0;
-            text-align: center;
-            margin-bottom: 40px;
-        }
+    .hero h1 {
+      font-size: clamp(34px, 5vw, 52px);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
+    }
 
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
+    .hero h2 {
+      font-size: clamp(20px, 3vw, 26px);
+      font-weight: 700;
+      color: var(--bark);
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 1;
+    }
 
-        .project-item {
-            background-color: #6b5d54;
-            border-radius: 12px;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
+    .hero p {
+      color: #2b241f;
+      margin-bottom: 10px;
+      max-width: 640px;
+      position: relative;
+      z-index: 1;
+    }
 
-        .project-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
-        }
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+      position: relative;
+      z-index: 1;
+    }
 
-        .project-item h3 {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #E8DFD0;
-            padding: 20px;
-            text-align: center;
-            background-color: #5a4d45;
-        }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 800;
+      background: var(--bark);
+      color: var(--light);
+      transition: transform 0.15s ease, box-shadow 0.2s ease;
+      box-shadow: var(--shadow);
+      letter-spacing: 0.01em;
+    }
 
-        .project-item img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            display: block;
-        }
+    .btn.alt {
+      background: transparent;
+      border: 1px solid rgba(20, 16, 14, 0.14);
+      color: var(--bark);
+      box-shadow: none;
+    }
 
-        .project-item video {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
+    .btn:hover { transform: translateY(-2px); }
 
-        .project-item a {
-            display: block;
-            text-decoration: none;
-        }
+    .contact-card {
+      background: linear-gradient(135deg, rgba(232, 223, 208, 0.95), rgba(193, 180, 162, 0.9));
+      border: 1px solid rgba(20, 16, 14, 0.1);
+      border-radius: 20px;
+      padding: 18px;
+      display: grid;
+      gap: 10px;
+      align-content: start;
+      box-shadow: var(--shadow);
+      position: relative;
+      z-index: 1;
+    }
 
-        .project-item a img {
-            transition: opacity 0.3s ease;
-        }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(90, 77, 69, 0.12);
+      color: var(--ink);
+      font-weight: 800;
+      font-size: 14px;
+      font-family: 'Manrope', 'Segoe UI', system-ui, sans-serif;
+    }
 
-        .project-item a:hover img {
-            opacity: 0.85;
-        }
+    .panel {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(20, 16, 14, 0.08);
+      border-radius: 22px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
 
-        /* Button Style for PDFs */
-        .pdf-button {
-            background-color: #5a4d45;
-            padding: 40px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-            min-height: 200px;
-        }
+    .section-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
 
-        .pdf-button:hover {
-            background-color: #6b5d54;
-        }
+    .section-head h2 {
+      font-size: 26px;
+      letter-spacing: -0.01em;
+      font-weight: 800;
+    }
 
-        .pdf-button img {
-            max-width: 60%;
-            height: auto;
-        }
+    .section-head span {
+      font-size: 14px;
+      color: #43372f;
+      font-family: 'DM Mono', monospace;
+    }
 
-        /* Video Container - Full Width Centered */
-        .video-container {
-            grid-column: 1 / -1;
-            max-width: 800px;
-            margin: 40px auto;
-            background-color: #6b5d54;
-            border-radius: 12px;
-            overflow: hidden;
-        }
+    .skills {
+      background: linear-gradient(135deg, rgba(232, 223, 208, 0.9), rgba(193, 180, 162, 0.9));
+      color: var(--ink);
+    }
 
-        .video-container h3 {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #E8DFD0;
-            padding: 20px;
-            text-align: center;
-            background-color: #5a4d45;
-        }
+    .skills p { white-space: pre-line; font-size: 16px; color: #2b241f; max-width: 980px; }
 
-        .video-container video {
-            width: 100%;
-            display: block;
-        }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
 
-        /* Footer */
-        footer {
-            background-color: #2a2320;
-            padding: 50px 20px 30px;
-            color: #E8DFD0;
-        }
+    .project-card {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(20, 16, 14, 0.12);
+      background: var(--charcoal);
+      color: var(--light);
+      min-height: 260px;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+    }
 
-        footer h2 {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 2rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: #E8DFD0;
-        }
+    .project-card:hover { transform: translateY(-6px); box-shadow: 0 22px 50px rgba(0, 0, 0, 0.45); }
 
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
+    .project-thumb {
+      position: relative;
+      background: #1c1613;
+      overflow: hidden;
+    }
 
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 1.05rem;
-            color: #d4c7b5;
-        }
+    .project-thumb img,
+    .project-thumb video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      aspect-ratio: 4 / 5;
+      filter: saturate(1.02);
+      transition: transform 0.35s ease, filter 0.35s ease;
+    }
 
-        .contact-item svg,
-        .contact-item img {
-            width: 28px;
-            height: 28px;
-            flex-shrink: 0;
-        }
+    .project-card:hover .project-thumb img,
+    .project-card:hover .project-thumb video {
+      transform: scale(1.03);
+      filter: saturate(1.05);
+    }
 
-        .contact-item a {
-            color: #d4c7b5;
-            text-decoration: none;
-            transition: color 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+    .project-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(20, 16, 14, 0.7) 100%);
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: 14px;
+      color: var(--light);
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
 
-        .contact-item a:hover {
-            color: #ffffff;
-        }
+    .project-meta {
+      font-family: 'Manrope', 'Segoe UI', system-ui, sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      background: rgba(255, 255, 255, 0.16);
+      padding: 8px 12px;
+      border-radius: 999px;
+      backdrop-filter: blur(6px);
+      letter-spacing: 0.01em;
+      color: var(--light);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
 
-        .contact-item a:hover svg path,
-        .contact-item a:hover svg circle {
-            fill: #ffffff;
-            transition: fill 0.3s ease;
-        }
+    .overlay-btn {
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.1));
+      color: var(--ink);
+      font-family: 'Manrope', 'Segoe UI', system-ui, sans-serif;
+      font-weight: 800;
+      font-size: 13px;
+      border-radius: 14px;
+      padding: 10px 14px;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.15s ease, color 0.2s ease;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .header-zone h1 {
-                font-size: 2.5rem;
-            }
+    .overlay-btn:hover { background: rgba(255, 255, 255, 0.22); transform: translateY(-1px); color: var(--ink); }
 
-            .header-zone h2 {
-                font-size: 1.2rem;
-            }
+    .project-footer {
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.08));
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
 
-            .header-zone p,
-            .experience-zone h4 {
-                font-size: 1rem;
-            }
+    .project-link {
+      color: var(--muted);
+      text-decoration: none;
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
 
-            .projects-zone h2,
-            .experience-zone h2 {
-                font-size: 2rem;
-            }
+    /* Preview modal */
+    .preview-layer {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(8px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 26px;
+      z-index: 2000;
+    }
 
-            .projects-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
+    .preview-layer.open { display: flex; }
 
-            .contact-item {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 8px;
-            }
+    .preview-shell {
+      position: relative;
+      background: #1b1613;
+      border: 1px solid rgba(232, 223, 208, 0.18);
+      border-radius: 18px;
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
+      max-width: min(1024px, 92vw);
+      max-height: 90vh;
+      overflow: hidden;
+    }
 
-            .contact-item strong {
-                min-width: auto;
-            }
-        }
+    .preview-shell img,
+    .preview-shell video {
+      display: block;
+      max-width: 100%;
+      max-height: 90vh;
+      object-fit: contain;
+      background: #0f0b09;
+    }
 
-        @media (min-width: 769px) and (max-width: 1200px) {
-            .projects-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-    </style>
-  <script src="/_sdk/element_sdk.js"></script>
-  <style>@view-transition { navigation: auto; }</style>
-  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
-  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
- </head>
- <body>
-  <div class="portfolio-wrapper">
-   <header class="header-zone">
-    <h1 id="main-title">Hello! My name is Kadir</h1>
-    <h2 id="subtitle">I'm a graphic and a visual creative designer driven by curiosity.</h2>
-    <div class="header-intro-box">
-     <p id="intro-text-1">My work goes beyond static images. I use visual art and video editing to develop dynamic and captivating narratives.</p>
-     <p id="intro-text-2">I enjoy experimenting with color and typography, as well as using logo animation to bring life and dynamism to projects.</p>
-     <p id="intro-text-3">My goal is to develop effective communication across all platforms, from print to digital and motion. Welcome to my portfolio.</p>
+    .preview-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(0, 0, 0, 0.65);
+      color: var(--light);
+      border: 1px solid rgba(232, 223, 208, 0.2);
+      border-radius: 999px;
+      padding: 8px 12px;
+      cursor: pointer;
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.01em;
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
 
-        </header>
-        <section class="experience-zone">
-         <h2 id="skills-title">Skills &amp; Experience</h2>
-         <h4>Customer Relations &amp; Management Starting as a receptionist and advancing to management, I honed the ability to manage high-pressure environments while maintaining a welcoming atmosphere. Expertise: High-volume customer service, conflict resolution, and VIP guest management. Leadership: Transitioned from peer to leader, cultivating a team culture focused on empathy and efficiency.</h4>
-        </section>
-        <section class="projects-zone">
-         <h2 id="projects-title">My Projects</h2>
-         <div class="projects-grid">
-          <div class="project-item">
-            <h3>Joker designer</h3><a href="sources/to PNG/ok9.png" target="_blank" rel="noopener noreferrer"><img src="sources/to PNG/ok9.png" alt="Joker designer project" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';"></a>
+    .preview-close:hover { background: rgba(0, 0, 0, 0.8); transform: translateY(-1px); }
+
+    .doc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .doc {
+      background: rgba(232, 223, 208, 0.95);
+      color: var(--ink);
+      border: 1px solid rgba(20, 16, 14, 0.1);
+      border-radius: 16px;
+      padding: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      text-decoration: none;
+      font-weight: 800;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: var(--shadow);
+      letter-spacing: 0.01em;
+    }
+
+    .doc:hover { transform: translateY(-3px); }
+
+    .contact {
+      background: linear-gradient(180deg, #3d3430 0%, #2b2521 100%);
+      color: var(--muted);
+      border: 1px solid rgba(232, 223, 208, 0.12);
+    }
+
+    .contact h2 { color: var(--light); }
+
+    .contact-list { display: grid; gap: 10px; margin-top: 10px; }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(232, 223, 208, 0.14);
+      transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+    }
+
+    .contact-item strong { color: var(--light); font-weight: 800; }
+
+    .contact-item:hover {
+      background: rgba(232, 223, 208, 0.08);
+      color: var(--light);
+      transform: translateY(-2px);
+    }
+
+    footer {
+      margin-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      color: rgba(244, 232, 216, 0.85);
+      font-size: 14px;
+    }
+
+    @media (max-width: 980px) {
+      header { position: static; flex-wrap: wrap; }
+      nav { display: none; }
+      .hero { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 32px; }
+    }
+
+    @media (max-width: 640px) {
+      .page { padding: 18px 16px 60px; }
+      .hero, .panel { padding: 22px; }
+      footer { flex-direction: column; gap: 6px; }
+      .project-thumb img, .project-thumb video { aspect-ratio: 1 / 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="brand">
+        <div class="brand-mark">K</div>
+        <div>
+          <div style="font-size: 15px;">Kadir</div>
+          <small style="color: #5a4d45; font-family: 'DM Mono', monospace;">Graphic & Visual Creative Designer</small>
+        </div>
+      </div>
+      <nav aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="ghost" href="mailto:rkanga786@gmail.com">Email me</a>
+    </header>
+
+    <main>
+      <section id="about" class="hero">
+        <div>
+          <h1>Hello! My name is Kadir</h1>
+          <h2>I'm a graphic and a visual creative designer driven by curiosity.</h2>
+          <p>My work goes beyond static images. I use visual art and video editing to develop dynamic and captivating narratives.</p>
+          <p>I enjoy experimenting with color and typography, as well as using logo animation to bring life and dynamism to projects.</p>
+          <p>My goal is to develop effective communication across all platforms, from print to digital and motion. Welcome to my portfolio.</p>
+          <div class="cta-row">
+            <a class="btn" href="mailto:rkanga786@gmail.com">Write to me</a>
+            <a class="btn alt" href="https://www.linkedin.com/in/kadir-s-5567bb3a0?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noreferrer">LinkedIn</a>
           </div>
-          <div class="project-item">
-            <h3>.mp3 Volume</h3><a href="sources/to PNG/ok8.png" target="_blank" rel="noopener noreferrer"><img src="sources/to PNG/ok8.png" alt="mp3 Volume project" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';"></a>
+        </div>
+        <div class="contact-card">
+          <span class="chip">rkanga786@gmail.com</span>
+          <span class="chip">kadir.seymen@my.istec.pt</span>
+          <span class="chip">+351 930 510 144</span>
+        </div>
+      </section>
+
+      <section id="skills" class="panel skills">
+        <div class="section-head">
+          <h2>Skills & Experience</h2>
+          <span>What I bring to the table</span>
+        </div>
+        <p>Customer Relations & Management Starting as a receptionist and advancing to management, I honed the ability to manage high-pressure environments while maintaining a welcoming atmosphere. Expertise: High-volume customer service, conflict resolution, and VIP guest management. Leadership: Transitioned from peer to leader, cultivating a team culture focused on empathy and efficiency.</p>
+      </section>
+
+      <section id="projects" class="panel" style="background: rgba(255, 255, 255, 0.9);">
+        <div class="section-head">
+          <h2>My Projects</h2>
+          <span>Selected visual work</span>
+        </div>
+        <div class="projects-grid">
+          <div class="project-card" data-preview="https://kadir-se.github.io/portfolio/sources/to%20PNG/ok9.png" data-type="image">
+            <div class="project-thumb">
+              <img src="https://kadir-se.github.io/portfolio/sources/to%20PNG/ok9.png" alt="Joker designer project">
+              <div class="project-overlay">
+                <div>Joker designer</div>
+                <span class="project-meta">Preview</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <span>Joker designer</span>
+              <a class="project-link" href="https://kadir-se.github.io/portfolio/sources/to%20PNG/ok9.png" target="_blank" rel="noreferrer">View ↗</a>
+            </div>
           </div>
-          <div class="project-item">
-            <h3>Woman in Red</h3><a href="sources/to PNG/ok7.png" target="_blank" rel="noopener noreferrer"><img src="sources/to PNG/ok7.png" alt="Woman in Red project" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';"></a>
+
+          <div class="project-card" data-preview="https://kadir-se.github.io/portfolio/sources/to%20PNG/ok8.png" data-type="image">
+            <div class="project-thumb">
+              <img src="https://kadir-se.github.io/portfolio/sources/to%20PNG/ok8.png" alt=".mp3 Volume project">
+              <div class="project-overlay">
+                <div>.mp3 Volume</div>
+                <span class="project-meta">Preview</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <span>.mp3 Volume</span>
+              <a class="project-link" href="https://kadir-se.github.io/portfolio/sources/to%20PNG/ok8.png" target="_blank" rel="noreferrer">View ↗</a>
+            </div>
           </div>
-          <div class="project-item">
-            <h3>Vogue cover</h3><a href="sources/to PNG/ok3.png" target="_blank" rel="noopener noreferrer"><img src="sources/to PNG/ok3.png" alt="Vogue cover project" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';"></a>
+
+          <div class="project-card" data-preview="https://kadir-se.github.io/portfolio/sources/to%20PNG/ok7.png" data-type="image">
+            <div class="project-thumb">
+              <img src="https://kadir-se.github.io/portfolio/sources/to%20PNG/ok7.png" alt="Woman in Red project">
+              <div class="project-overlay">
+                <div>Woman in Red</div>
+                <span class="project-meta">Preview</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <span>Woman in Red</span>
+              <a class="project-link" href="https://kadir-se.github.io/portfolio/sources/to%20PNG/ok7.png" target="_blank" rel="noreferrer">View ↗</a>
+            </div>
           </div>
-     <div class="project-item">
-      <h3>Clothes design</h3><a href="sources/to PNG/ok4.png" target="_blank" rel="noopener noreferrer"><img src="sources/to PNG/ok4.png" alt="Vogue cover project" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';"></a>
-     </div>
-     <div class="project-item">
-      <h3>Clothes color</h3><a href="sources/to PNG/ok5.png" target="_blank" rel="noopener noreferrer"><img src="sources/to PNG/ok5.png" alt="Vogue cover project" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';"></a>
-     </div>
-     <div class="project-item">
-      <h3>Lego</h3><a href="sources/to PNG/ok6.png" target="_blank" rel="noopener noreferrer"><img src="sources/to PNG/ok6.png" alt="Vogue cover project" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';"></a>
-     </div>
-     <div class="project-item">
-      <h3>Landscape</h3><a href="sources/to PNG/ok1.png" target="_blank" rel="noopener noreferrer"><img src="sources/to PNG/ok1.png" alt="Vogue cover project" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';"></a>
-     </div>
-     <div class="project-item">
-      <h3>Lies</h3><a href="sources/to PNG/ok2.png" target="_blank" rel="noopener noreferrer"><img src="sources/to PNG/ok2.png" alt="Vogue cover project" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';"></a>
-     </div>
-     <div class="project-item">
-      <h3>E.C.H.O. loop</h3><a href="sources/echo.gif" target="_blank" rel="noopener noreferrer"><img src="sources/echo.gif" alt="Vogue cover project" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';"></a>
-     </div>
-     <a href="sources/E.C.H.O_manual_final_completo2.pdf" alt="Click to view Manual PDF" onerror="this.src=''; this.alt='PDF preview failed to load';"> 
-     <div class="project-item">
-        <h3>Manual</h3> 
-         </div>
-     </a>
-   <a href="sources/brandbook_final2.pdf" alt="Click to view Manual PDF" onerror="this.src=''; this.alt='PDF preview failed to load';"> 
-     <div class="project-item">
-        <h3>Brandbook</h3> 
-         </div>
-     </a>
-     <div class="project-item">
-      <h3>Ocean's Fury</h3>
-      <video controls autoplay loop><source src="sources/0001-0250.mp4" type="video/mp4"> Your browser does not support the video tag.
-      </video>
-     </div>
+
+          <div class="project-card" data-preview="https://kadir-se.github.io/portfolio/sources/to%20PNG/ok3.png" data-type="image">
+            <div class="project-thumb">
+              <img src="https://kadir-se.github.io/portfolio/sources/to%20PNG/ok3.png" alt="Vogue cover project">
+              <div class="project-overlay">
+                <div>Vogue cover</div>
+                <span class="project-meta">Preview</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <span>Vogue cover</span>
+              <a class="project-link" href="https://kadir-se.github.io/portfolio/sources/to%20PNG/ok3.png" target="_blank" rel="noreferrer">View ↗</a>
+            </div>
+          </div>
+
+          <div class="project-card" data-preview="https://kadir-se.github.io/portfolio/sources/to%20PNG/ok4.png" data-type="image">
+            <div class="project-thumb">
+              <img src="https://kadir-se.github.io/portfolio/sources/to%20PNG/ok4.png" alt="Clothes design project">
+              <div class="project-overlay">
+                <div>Clothes design</div>
+                <span class="project-meta">Preview</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <span>Clothes design</span>
+              <a class="project-link" href="https://kadir-se.github.io/portfolio/sources/to%20PNG/ok4.png" target="_blank" rel="noreferrer">View ↗</a>
+            </div>
+          </div>
+
+          <div class="project-card" data-preview="https://kadir-se.github.io/portfolio/sources/to%20PNG/ok5.png" data-type="image">
+            <div class="project-thumb">
+              <img src="https://kadir-se.github.io/portfolio/sources/to%20PNG/ok5.png" alt="Clothes color project">
+              <div class="project-overlay">
+                <div>Clothes color</div>
+                <span class="project-meta">Preview</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <span>Clothes color</span>
+              <a class="project-link" href="https://kadir-se.github.io/portfolio/sources/to%20PNG/ok5.png" target="_blank" rel="noreferrer">View ↗</a>
+            </div>
+          </div>
+
+          <div class="project-card" data-preview="https://kadir-se.github.io/portfolio/sources/to%20PNG/ok6.png" data-type="image">
+            <div class="project-thumb">
+              <img src="https://kadir-se.github.io/portfolio/sources/to%20PNG/ok6.png" alt="Lego project">
+              <div class="project-overlay">
+                <div>Lego</div>
+                <span class="project-meta">Preview</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <span>Lego</span>
+              <a class="project-link" href="https://kadir-se.github.io/portfolio/sources/to%20PNG/ok6.png" target="_blank" rel="noreferrer">View ↗</a>
+            </div>
+          </div>
+
+          <div class="project-card" data-preview="https://kadir-se.github.io/portfolio/sources/to%20PNG/ok1.png" data-type="image">
+            <div class="project-thumb">
+              <img src="https://kadir-se.github.io/portfolio/sources/to%20PNG/ok1.png" alt="Landscape project">
+              <div class="project-overlay">
+                <div>Landscape</div>
+                <span class="project-meta">Preview</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <span>Landscape</span>
+              <a class="project-link" href="https://kadir-se.github.io/portfolio/sources/to%20PNG/ok1.png" target="_blank" rel="noreferrer">View ↗</a>
+            </div>
+          </div>
+
+          <div class="project-card" data-preview="https://kadir-se.github.io/portfolio/sources/to%20PNG/ok2.png" data-type="image">
+            <div class="project-thumb">
+              <img src="https://kadir-se.github.io/portfolio/sources/to%20PNG/ok2.png" alt="Lies project">
+              <div class="project-overlay">
+                <div>Lies</div>
+                <span class="project-meta">Preview</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <span>Lies</span>
+              <a class="project-link" href="https://kadir-se.github.io/portfolio/sources/to%20PNG/ok2.png" target="_blank" rel="noreferrer">View ↗</a>
+            </div>
+          </div>
+
+          <div class="project-card" data-preview="https://kadir-se.github.io/portfolio/sources/echo.gif" data-type="image">
+            <div class="project-thumb">
+              <img src="https://kadir-se.github.io/portfolio/sources/echo.gif" alt="E.C.H.O. loop project">
+              <div class="project-overlay">
+                <div>E.C.H.O. loop</div>
+                <span class="project-meta">Preview</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <span>E.C.H.O. loop</span>
+              <a class="project-link" href="https://kadir-se.github.io/portfolio/sources/echo.gif" target="_blank" rel="noreferrer">View ↗</a>
+            </div>
+          </div>
+
+          <div class="project-card" data-video-card data-preview="https://kadir-se.github.io/portfolio/sources/0001-0250.mp4" data-type="video">
+            <div class="project-thumb">
+              <video controls loop>
+                <source src="https://kadir-se.github.io/portfolio/sources/0001-0250.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="project-overlay">
+                <div>Ocean's Fury</div>
+                <button class="overlay-btn" type="button" data-toggle-play>Play</button>
+              </div>
+            </div>
+            <div class="project-footer">
+              <span>Ocean's Fury</span>
+              <span class="project-link">Play/Pause</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="doc-grid">
+          <a class="doc" href="https://kadir-se.github.io/portfolio/sources/E.C.H.O_manual_final_completo2.pdf" target="_blank" rel="noreferrer">
+            <span>Manual (PDF)</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+          <a class="doc" href="https://kadir-se.github.io/portfolio/sources/brandbook_final2.pdf" target="_blank" rel="noreferrer">
+            <span>Brandbook (PDF)</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </section>
+
+      <section id="contact" class="panel contact">
+        <div class="section-head">
+          <h2>Contact Me</h2>
+          <span>Let's talk</span>
+        </div>
+        <div class="contact-list">
+          <a class="contact-item" href="mailto:rkanga786@gmail.com">
+            <strong>Email</strong> <span>rkanga786@gmail.com</span>
+          </a>
+          <a class="contact-item" href="mailto:kadir.seymen@my.istec.pt">
+            <strong>Email</strong> <span>kadir.seymen@my.istec.pt</span>
+          </a>
+          <a class="contact-item" href="https://wa.me/351930510144" target="_blank" rel="noreferrer">
+            <strong>WhatsApp</strong> <span>+351 930 510 144</span>
+          </a>
+          <a class="contact-item" href="https://www.linkedin.com/in/kadir-s-5567bb3a0?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noreferrer">
+            <strong>LinkedIn</strong> <span>Connect on LinkedIn</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>Palette from the original portfolio.</span>
+      <span>All visuals & links sourced from the provided site.</span>
+    </footer>
+  </div>
+  <div class="preview-layer" data-preview-modal>
+    <div class="preview-shell">
+      <button class="preview-close" type="button" data-preview-close>Close ✕</button>
+      <img data-preview-img alt="Project preview">
+      <video data-preview-video controls playsinline style="display:none;"></video>
     </div>
-   </section>
-   <footer>
-    <div class="footer-content">
-     <h2 id="contact-title">Contact Me</h2>
-     <div class="contact-item">
-      <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="#d4c7b5" width="28" height="28"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-      </svg><span> <a href="mailto:rkanga786@gmail.com">rkanga786@gmail.com</a> &amp; <a href="mailto:kadir.seymen@my.istec.pt">kadir.seymen@my.istec.pt</a> </span>
-     </div>
-     <div class="contact-item"><a href="https://wa.me/351930510144" target="_blank" rel="noopener noreferrer">
-       <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="#d4c7b5" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-       </svg><span>+351 930 510 144</span> </a>
-     </div>
-     <div class="contact-item"><a href="https://www.linkedin.com/in/kadir-s-5567bb3a0?utm_source=share&amp;utm_campaign=share_via&amp;utm_content=profile&amp;utm_medium=android_app" target="_blank" rel="noopener noreferrer">
-       <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="#d4c7b5" width="28" height="28"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-       </svg><span>Connect on LinkedIn</span> </a>
-     </div>
-    </div>
-   </footer>
   </div>
   <script>
-        const defaultConfig = {
-            main_title: "Hello! My name is Kadir",
-            subtitle: "I'm a graphic and a visual creative designer driven by curiosity.",
-            intro_text: "My work goes beyond static images. I use visual art and video editing to develop dynamic and captivating narratives. I enjoy experimenting with color and typography, as well as using logo animation to bring life and dynamism to projects. My goal is to develop effective communication across all platforms, from print to digital and motion. Welcome to my portfolio.",
-            skills_title: "Skills & Experience",
-            projects_title: "My Projects",
-            contact_title: "Contact Me"
-        };
-
-        async function onConfigChange(config) {
-            const mainTitle = config.main_title || defaultConfig.main_title;
-            const subtitle = config.subtitle || defaultConfig.subtitle;
-            const introText = config.intro_text || defaultConfig.intro_text;
-            const skillsTitle = config.skills_title || defaultConfig.skills_title;
-            const projectsTitle = config.projects_title || defaultConfig.projects_title;
-            const contactTitle = config.contact_title || defaultConfig.contact_title;
-
-            document.getElementById('main-title').textContent = mainTitle;
-            document.getElementById('subtitle').textContent = subtitle;
-            
-            const introParagraphs = introText.split('. ').filter(p => p.trim());
-            if (introParagraphs.length >= 1) document.getElementById('intro-text-1').textContent = introParagraphs[0] + (introParagraphs[0].endsWith('.') ? '' : '.');
-            if (introParagraphs.length >= 2) document.getElementById('intro-text-2').textContent = introParagraphs[1] + (introParagraphs[1].endsWith('.') ? '' : '.');
-            if (introParagraphs.length >= 3) document.getElementById('intro-text-3').textContent = introParagraphs.slice(2).join('. ') + (introText.endsWith('.') ? '' : '.');
-            
-            document.getElementById('skills-title').textContent = skillsTitle;
-            document.getElementById('projects-title').textContent = projectsTitle;
-            document.getElementById('contact-title').textContent = contactTitle;
+    // Enable play/pause from overlay button on the video card
+    document.querySelectorAll('[data-video-card]').forEach(card => {
+      const video = card.querySelector('video');
+      const toggle = card.querySelector('[data-toggle-play]');
+      if (!video || !toggle) return;
+      toggle.addEventListener('click', e => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (video.paused) {
+          video.play();
+          toggle.textContent = 'Pause';
+        } else {
+          video.pause();
+          toggle.textContent = 'Play';
         }
+      });
+    });
 
-        function mapToCapabilities(config) {
-            return {
-                recolorables: [],
-                borderables: [],
-                fontEditable: undefined,
-                fontSizeable: undefined
-            };
-        }
+    // Preview lightbox
+    const previewLayer = document.querySelector('[data-preview-modal]');
+    const previewImg = document.querySelector('[data-preview-img]');
+    const previewVideo = document.querySelector('[data-preview-video]');
+    const closeBtn = document.querySelector('[data-preview-close]');
 
-        function mapToEditPanelValues(config) {
-            return new Map([
-                ["main_title", config.main_title || defaultConfig.main_title],
-                ["subtitle", config.subtitle || defaultConfig.subtitle],
-                ["intro_text", config.intro_text || defaultConfig.intro_text],
-                ["skills_title", config.skills_title || defaultConfig.skills_title],
-                ["projects_title", config.projects_title || defaultConfig.projects_title],
-                ["contact_title", config.contact_title || defaultConfig.contact_title]
-            ]);
-        }
+    function openPreview(type, src) {
+      if (!previewLayer) return;
+      previewImg.style.display = 'none';
+      previewVideo.style.display = 'none';
+      previewVideo.pause();
+      if (type === 'video') {
+        previewVideo.src = src;
+        previewVideo.style.display = 'block';
+      } else {
+        previewImg.src = src;
+        previewImg.style.display = 'block';
+      }
+      previewLayer.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
 
-        if (window.elementSdk) {
-            window.elementSdk.init({
-                defaultConfig,
-                onConfigChange,
-                mapToCapabilities,
-                mapToEditPanelValues
-            });
-        }
-    </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9abd734d24c9e3b4',t:'MTc2NTM3NzEzMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+    function closePreview() {
+      previewLayer.classList.remove('open');
+      previewVideo.pause();
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('[data-preview]').forEach(el => {
+      el.addEventListener('click', e => {
+        const src = el.getAttribute('data-preview');
+        const type = el.getAttribute('data-type') || 'image';
+        if (!src) return;
+        e.preventDefault();
+        openPreview(type, src);
+      });
+    });
+
+    if (closeBtn) closeBtn.addEventListener('click', closePreview);
+    if (previewLayer) {
+      previewLayer.addEventListener('click', e => {
+        if (e.target === previewLayer) closePreview();
+      });
+    }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && previewLayer?.classList.contains('open')) closePreview();
+    });
+  </script>
+</body>
 </html>
