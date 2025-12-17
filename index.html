@@ -39,6 +39,23 @@
     }
     /* --- NAVIGATION SCROLL FIX END --- */
 
+    h2 {
+      font-family: 'Manrope', 'Segoe UI', system-ui, sans-serif;
+      color: var(--ink);
+      margin-bottom: 8px;
+      color: #312925;
+    }
+
+    h4 {
+      font-family: 'Manrope', 'Segoe UI', system-ui, sans-serif;
+      color: var(--ink);
+      color: #3e2c22;
+    }
+    p {
+      font-size: 16px;
+      color: #312925;
+      font-weight: 450;
+    }
     body {
       font-family: 'Manrope', 'Segoe UI', system-ui, sans-serif;
       background: radial-gradient(circle at 20% 30%, rgba(200, 182, 160, 0.35), transparent 32%),
@@ -130,7 +147,7 @@
     main { display: grid; gap: 46px; margin-top: 22px; }
 
     .hero {
-      background: rgba(255, 255, 255, 0.82);
+      background: rgba(235, 230, 223, 0.836);
       border: 1px solid rgba(20, 16, 14, 0.08);
       border-radius: 26px;
       padding: 32px;
@@ -268,7 +285,65 @@
       color: var(--ink);
     }
 
-    .skills p { white-space: pre-line; font-size: 16px; color: #2b241f; max-width: 980px; }
+    .skills p {
+      white-space: normal; /* override pre-line */
+      text-align: justify;
+      text-justify: inter-word;
+      max-width: 100%;
+      padding-right: 18px; /* small gap on the right */
+      margin-bottom: 12px;
+}
+
+
+    .skills-list {
+  display: grid;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.skill-item {
+  display: grid;
+  grid-template-columns: 44px 1fr auto;
+  align-items: center;
+  gap: 14px;
+}
+
+.skill-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: grid;
+  place-items: center;
+}
+
+.skill-icon img {
+  width: 40px;
+  height: 40px;
+}
+
+.skill-bar {
+  position: relative;
+  height: 12px;
+  border-radius: 999px;
+  background: rgba(90, 77, 69, 0.2);
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #5a4d45, #2b2521);
+}
+
+.skill-percent {
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  color: #2b241f;
+}
+
 
     .projects-grid {
       display: grid;
@@ -349,6 +424,7 @@
       font-family: 'Manrope', 'Segoe UI', system-ui, sans-serif;
       font-weight: 800;
       font-size: 13px;
+      color: var(--light);
       border-radius: 14px;
       padding: 10px 14px;
       cursor: pointer;
@@ -551,12 +627,75 @@
         </div>
       </section>
 
+     <section id="skills" class="panel skills">
+  <div class="section-head">
+    <h2>Skills</h2>
+    <span>Software proficiency</span>
+  </div>
+
+  <div class="skills-list">
+    <!-- Illustrator -->
+    <div class="skill-item">
+      <div class="skill-icon">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Adobe_Illustrator_CC_icon.svg/2048px-Adobe_Illustrator_CC_icon.svg.png" alt="Adobe Illustrator">
+      </div>
+      <div class="skill-bar">
+        <div class="skill-fill" style="width: 90%;"></div>
+      </div>
+      <div class="skill-percent">90%</div>
+    </div>
+
+    <!-- Photoshop -->
+    <div class="skill-item">
+      <div class="skill-icon">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Adobe_Photoshop_CC_icon.svg/1051px-Adobe_Photoshop_CC_icon.svg.png" alt="Adobe Photoshop">
+      </div>
+      <div class="skill-bar">
+        <div class="skill-fill" style="width: 70%;"></div>
+      </div>
+      <div class="skill-percent">70%</div>
+    </div>
+
+    <!-- After Effects -->
+    <div class="skill-item">
+      <div class="skill-icon">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Adobe_After_Effects_CC_icon.svg/1200px-Adobe_After_Effects_CC_icon.svg.png" alt="Adobe After Effects">
+      </div>
+      <div class="skill-bar">
+        <div class="skill-fill" style="width: 60%;"></div>
+      </div>
+      <div class="skill-percent">60%</div>
+    </div>
+
+    <!-- DaVinci Resolve -->
+    <div class="skill-item">
+      <div class="skill-icon">
+        <img src="https://pnghdpro.com/wp-content/themes/pnghdpro/download/social-media-and-brands/davinci-resolve-logo-hd.png" alt="DaVinci Resolve">
+      </div>
+      <div class="skill-bar">
+        <div class="skill-fill" style="width: 55%;"></div>
+      </div>
+      <div class="skill-percent">55%</div>
+    </div>
+  </div>
+</section>
+
+
       <section id="skills" class="panel skills">
         <div class="section-head">
-          <h2>Skills & Experience</h2>
-          <span>What I bring to the table</span>
+          <h2>Experience</h2>
+          <span>What i bring to the table</span>
         </div>
-        <p>Customer Relations & Management Starting as a receptionist and advancing to management, I honed the ability to manage high-pressure environments while maintaining a welcoming atmosphere. Expertise: High-volume customer service, conflict resolution, and VIP guest management. Leadership: Transitioned from peer to leader, cultivating a team culture focused on empathy and efficiency.</p>
+        <h4>Graphic & Multimedia Designer Specialization:</h4>
+        <p>Visual Identity, Logo Design, and Branding</p>
+       <h4>Hospitality & Team Management Roles:</h4> 
+        <p>Front Office Manager / Administrative Assistant & Translation Reviewer</p>
+        <h4>Customer Relations & Management:</h4>
+        <p>Profile Starting as a receptionist and advancing to management, I honed the ability to manage high-pressure environments while maintaining a welcoming atmosphere.</p>
+        <h4>Expertise: </h4>
+        <p>High-volume customer service, conflict resolution, and VIP guest management.</p>
+        <h4>Leadership:</h4>
+        <p>Transitioned from peer to leader, cultivating a team culture focused on empathy and efficiency.</p>
       </section>
 
       <section id="projects" class="panel" style="background: rgba(255, 255, 255, 0.9);">
@@ -703,6 +842,19 @@
               <span>E.C.H.O. loop</span>
               <a class="project-link" href="https://kadir-se.github.io/portfolio/sources/echo.gif" target="_blank" rel="noreferrer">View ↗</a>
             </div>
+          </div>
+
+          
+            <div class="project-card" data-type="image">
+              <a href="https://www.figma.com/proto/gdCEF9aw7h2uUqHIEczxMC/Mobile-app?node-id=0-1&p=f&t=uzsuC0l2flhlDYc3-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2">
+            <div class="project-thumb">
+              <img src="sources/Screenshot 2025-12-17 125752.png" alt="Brawlhalla app project">
+              <div class="project-overlay">
+                <div>Brawlhalla app</div>
+                <span class="project-meta">View on Figma</span>
+              </div>
+            </div>
+            </a>
           </div>
 
           <div class="project-card" data-video-card data-preview="https://kadir-se.github.io/portfolio/sources/0001-0250.mp4" data-type="video">
